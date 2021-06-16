@@ -21,17 +21,28 @@
  *
  */
 
-var nTimes = function(n, func) {
+ var nTimes = function(n, func) {
   // Your code here.
   var result;
-
+  var counter = n;
   return function() {
-    while(n) {
-      result = func.apply(this, arguments);
+      if(counter) {
+        counter--;
+         return result = func.apply(this, arguments);
+      }else {
+        return result;
+      }
+
     }
-   n--;
-  }
 
-  return result;
 };
+var add = function(a, b) {
+  return a + b;
+}
 
+var add3Times = nTimes(3, add);
+console.log(add3Times(1, 5));
+console.log(add3Times(6, 5));
+console.log(add3Times(2, 3));
+console.log(add3Times(1, 5));
+console.log(add3Times(9, 8));

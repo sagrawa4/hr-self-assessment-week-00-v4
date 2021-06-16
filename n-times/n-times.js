@@ -23,5 +23,15 @@
 
 var nTimes = function(n, func) {
   // Your code here.
+  var result;
+
+  return function() {
+    while(n) {
+      result = func.apply(this, arguments);
+    }
+   n--;
+  }
+
+  return result;
 };
 

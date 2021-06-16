@@ -45,9 +45,18 @@
 //
 // returns 60
 
-
-
 var totalSales = function (salesTeam) {
   // All your code in this function body
+  if(salesTeam[individualSales] === undefined) {
+    return 0;
+  }
+
+  var totalSales += salesTeam[individualSales];
+
+  for(var i=0; i< salesTeam.manages.length; i++) {
+    totalSales(salesTeam.manages[i];)
+  }
+
+  return totalSales;
 };
 
